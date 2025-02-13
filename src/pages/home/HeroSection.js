@@ -1,77 +1,62 @@
 import React from 'react'
 import bgImage from '../../asset/ad-bg-pattern.png'
-import juiceImg from '../../asset/product-thumb-1.png'
-import KetchupImg from '../../asset/product-thumb-2.png'
-import honeyImg from '../../asset/product-thumb-3.png'
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import { heroCarouselData } from '../../data/HeroCarousel/HeroCarousel'
+import ads1 from '../../asset/ad-image-1.png'
+import ads2 from '../../asset/ad-image-2.png'
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 const HeroSection = () => {
-    return (
-        <section className="py-5" style={{ backgroundImage: `${bgImage}`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-md-12">
-                        <div className="brand-block">
-                            <div className="brand-ad large bg-info bg-opacity-10 block-1">
-                                <div className="carousel">
-                                    <div className="carousel-cell">
-                                        <div className="row p-5">
-                                            <div className="col-md-7">
-                                                <div className="fs-1 text-warning my-3 mb-4">100% Natural</div>
-                                                <h3 className=" display-4 text-capitalize">Fresh Smoothie And fress juice</h3>
-                                                <p>Healthy drink for hot summer</p>
-                                                <a href="#" className="btn btn-outline-dark btn-lg text-uppercase px-4 py-3 mt-3">shop now</a>
-                                            </div>
-                                            <div className="col-md-5">
-                                                <img src={juiceImg} alt="" className="img-fluid" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="carousel-cell">
-                                        <div className="row p-5">
-                                            <div className="col-md-7">
-                                                <div className="fs-1 text-warning my-3 mb-4">100% Natural</div>
-                                                <h3 className=" display-4 text-capitalize">Fresh Smoothie Pure Tomato Ketchup</h3>
-                                                <p>Healthy drink for hot summer</p>
-                                                <a href="#" className="btn btn-outline-dark btn-lg text-uppercase px-4 py-3 mt-3">shop now</a>
-                                            </div>
-                                            <div className="col-md-5">
-                                                <img src={KetchupImg} alt="" className="img-fluid" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="carousel-cell">
-                                        <div className="row p-5">
-                                            <div className="col-md-7">
-                                                <div className="fs-1 text-warning my-3 mb-4">100% Natural</div>
-                                                <h3 className=" display-4 text-capitalize">Fresh Honey Dabur Honey</h3>
-                                                <p>Healthy drink for hot summer</p>
-                                                <a href="#" className="btn btn-outline-dark btn-lg text-uppercase px-4 py-3 mt-3">shop now</a>
-                                            </div>
-                                            <div className="col-md-5">
-                                                <img src={honeyImg} alt="" className="img-fluid" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                            </div>
-                            <div className="brand-ad brand-1 large bg-success bg-opacity-10 block-2">
-                                <div className="row p-5">
-                                    <div className="col-md-7">
-                                        <div className="fs-2 text-muted sale mb-4">20% OFF</div>
-                                        <h3 className="fw-bold display-6 text-capitalize">Fruits & Vegetables</h3>
-                                        <a href="#" className="nav-link text-capitalize">shop collection <i className="fa fa-arrow-right"></i></a>
-                                    </div>
+    const items = heroCarouselData.map((item, index) => (
+        <div className="carousel-cell" key={index}>
+            <div className="row p-4">
+                <div className="col-md-7">
+                    <div className="fs-2 fw-semibold text-warning my-3">100% Natural</div>
+                    <h3 className=" display-5 text-capitalize fw-bold">{item.title}</h3>
+                    <p>{item.summary}</p>
+                    <a href="#" className="btn btn-outline-dark btn-lg text-uppercase p-3 mt-2 fs-6">shop now</a>
+                </div>
+                <div className="col-md-5">
+                    <img src={item.img} alt="bannerImg" className="img-fluid" />
+                </div>
+            </div>
+        </div>
+    ))
+
+    return (
+        <section className="py-5" style={{ backgroundImage: `${bgImage}`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', zIndex: "1" }}>
+            <div className="container-fluid">
+                <div className="row ps-3">
+                    <div className="large bg-info bg-opacity-10 block-1 col-12 col-lg-7 rounded-4 my-2">
+                        <AliceCarousel
+                            items={items}
+                            disableButtonsControls
+                            autoPlay
+                            autoPlayInterval={1000}
+                            infinite
+                        />
+                    </div>
+                    <div className="col-12 col-lg-5 my-2 me-lg-0">
+                        <div className="bg-success bg-opacity-10 my-2 rounded-3 position-relative overflow-hidden">
+                            <div className="row p-5">
+                                <div className="col-7">
+                                    <div className="fs-4 text-muted fw-bold">20% OFF</div>
+                                    <h3 className="fw-bold display-5 text-capitalize">Fruits & Vegetables</h3>
+                                    <a href="#" className="nav-link text-capitalize">shop collection <ArrowRightAltIcon /> </a>
                                 </div>
+                                <img src={ads1} alt="adsImg" className="col-5 img-fluid position-absolute bottom-0" style={{ width: "250px", height: "200px", right: "-20px" }} />
                             </div>
-                            <div className="brand-ad brand-2 large bg-danger bg-opacity-10 block-3">
-                                <div className="row p-5">
-                                    <div className="col-md-7">
-                                        <div className="fs-2 text-muted sale  mb-4">15% OFF</div>
-                                        <h3 className="fw-bold display-6 text-capitalize">Bakery Products</h3>
-                                        <a href="#" className="nav-link text-capitalize">shop collection <i className="fa fa-arrow-right"></i></a>
-                                    </div>
+                        </div>
+                        <div className="bg-danger bg-opacity-10 rounded-3 position-relative mt-3">
+                            <div className="row p-5">
+                                <div className="col-7">
+                                    <div className="fs-4 text-muted fw-bold">15% OFF</div>
+                                    <h3 className="fw-bold display-5 text-capitalize">Bakery Products</h3>
+                                    <a href="#" className="nav-link text-capitalize">shop collection <ArrowRightAltIcon /> </a>
                                 </div>
+                                <img src={ads2} alt="adsImg" className="col-5 img-fluid position-absolute bottom-0 end-0" style={{ width: "250px", height: "200px" }} />
                             </div>
                         </div>
                     </div>

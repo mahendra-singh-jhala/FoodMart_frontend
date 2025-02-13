@@ -31,7 +31,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                     <div className="d-flex flex-column gap-2 lh-1 border-0 bg-transparent">
-                        <span className="fs-6 text-muted dropdown-toggle">Your Cart</span>
+                        <span className="fs-6 text-muted">Your Cart</span>
                         <span className="fs-5 fw-bold">₹ 250</span>
                     </div>
                 </div>
