@@ -9,6 +9,8 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import storeImg from '../../asset/app-store.jpg'
 import googleImg from '../../asset/google-play.jpg'
 import phoneImg from '../../asset/phone.png'
+import ads3 from '../../asset/ad-image-3.png'
+import ads4 from '../../asset/ad-image-4.png'
 
 const HeroSection = () => {
 
@@ -74,11 +76,11 @@ const HeroSection = () => {
                     <div className="col-md-6 p-5">
                         <form action="" className="">
                             <div className="mb-3">
-                                <label for="name" className="form-label">Name</label>
+                                <label for="name" className="form-label fw-semibold">Name</label>
                                 <input type="text" className="form-control form-control-lg" id="name" placeholder="Your Name" />
                             </div>
                             <div className="mb-3">
-                                <label for="email" className="form-label">Email</label>
+                                <label for="email" className="form-label fw-semibold">Email</label>
                                 <input type="emai" className="form-control form-control-lg" id="email" placeholder="Your Email" />
                             </div>
                             <div className="mb-3">
@@ -107,7 +109,7 @@ const HeroSection = () => {
                                 </div>
                                 <div className="col-md-5">
                                     <figure>
-                                        <img src="images/ad-image-3.png" alt="" className="img-fluid" />
+                                        <img src={ads3} alt="adsImg" className="img-fluid" />
                                     </figure>
                                 </div>
                             </div>
@@ -124,7 +126,7 @@ const HeroSection = () => {
                                 </div>
                                 <div className="col-md-5">
                                     <figure>
-                                        <img src="images/ad-image-4.png" alt="" className="img-fluid" />
+                                        <img src={ads4} alt="adsImg" className="img-fluid" />
                                     </figure>
                                 </div>
                             </div>
