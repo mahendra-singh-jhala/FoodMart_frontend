@@ -126,7 +126,7 @@ const HeroSection = () => {
                                 </div>
                                 <div className="col-md-5">
                                     <figure>
-                                        <img src={ads4} alt="adsImg" className="img-fluid" />
+                                        <img src={ads4} alt="adsImg" className="img-fluid w-75" />
                                     </figure>
                                 </div>
                             </div>

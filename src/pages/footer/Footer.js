@@ -4,6 +4,11 @@ import ShieldIcon from '@mui/icons-material/Shield';
 import DiamondIcon from '@mui/icons-material/Diamond';
 import SavingsIcon from '@mui/icons-material/Savings';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
+import logo from '../../asset/logo.png'
+import XIcon from '@mui/icons-material/X';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const Footer = () => {
     return (
@@ -63,40 +68,33 @@ const Footer = () => {
                 <div className="container-fluid">
                     <div className="row mx-4">
                         <div className="col-lg-3 col-md-6 col-sm-6">
-                            <img src="images/logo.png" alt="" />
+                            <img src={logo} alt="logo" />
                             <div className="my-5">
-                                <a href="" className="btn btn-outline-warning text-dark me-1"><i className="fa-brands fa-x-twitter"></i></a>
-                                <a href="" className="btn btn-outline-warning text-dark me-1"><i className="fa-brands fa-facebook"></i></a>
-                                <a href="" className="btn btn-outline-warning text-dark me-1"><i className="fa-brands fa-instagram"></i></a>
-                                <a href="" className="btn btn-outline-warning text-dark me-1"><i className="fa-brands fa-youtube"></i></a>
-                                <a href="" className="btn btn-outline-warning text-dark me-1"><i className="fa-brands fa-amazon"></i></a>
+                                <a href="" className="btn btn-outline-warning text-dark me-1"><XIcon className="fs-5" /></a>
+                                <a href="" className="btn btn-outline-warning text-dark me-1"><FacebookIcon className="fs-5" /></a>
+                                <a href="" className="btn btn-outline-warning text-dark me-1"><InstagramIcon className="fs-5" /></a>
+                                <a href="" className="btn btn-outline-warning text-dark me-1"><YouTubeIcon className="fs-5" /></a>
                             </div>
                         </div>
                         <div className="col-md-2 col-sm-6 d-flex flex-column">
-                            <h3 className="fw-bold">Ultra</h3>
-                            <a href="" className="text-decoration-none fs-6 text-muted">About</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted">Career</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted">Public</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted">Affilate</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted">Resourse</a>
+                            <h3 className="fw-bold">Our Menus</h3>
+                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Chicken</a>
+                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Pizza</a>
+                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Fresh Vegetables</a>
+                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Cold Drinks</a>
+                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Biryani</a>
+                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Burger</a>
                         </div>
-                        <div className="col-md-2 col-sm-6 d-flex flex-column">
-                            <h3 className="fw-bold">Ultra</h3>
-                            <a href="" className="text-decoration-none fs-6 text-muted">About</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted">Career</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted">Public</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted">Affilate</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted">Resourse</a>
+                        <div className="col-md-3 col-sm-6 d-flex flex-column">
+                            <h3 className="fw-bold">Useful Links</h3>
+                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">About Us</a>
+                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Restaurant</a>
+                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Our Chefs</a>
+                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Blog</a>
+                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">FAQ</a>
+                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Privacy policy</a>
                         </div>
-                        <div className="col-md-2 col-sm-6 d-flex flex-column">
-                            <h3 className="fw-bold">Ultra</h3>
-                            <a href="" className="text-decoration-none fs-6 text-muted">About</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted">Career</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted">Public</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted">Affilate</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted">Resourse</a>
-                        </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6">
+                        <div className="col-lg-4 col-md-6 col-sm-6">
                             <h3 className="fw-bold mb-4">Subscribe Us</h3>
                             <p>Subscribe to our newsletter to get updates and grand offers</p>
                             <form action="">
