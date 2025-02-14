@@ -33,6 +33,9 @@ const Header = () => {
                                     <li class="list-inline-item">
                                         <a class="nav-link text-muted fs-6 fw-bold" href="#">Bakery</a>
                                     </li>
+                                    <li class="list-inline-item">
+                                        <a class="nav-link text-muted fs-6 fw-bold" href="#">Chefs</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

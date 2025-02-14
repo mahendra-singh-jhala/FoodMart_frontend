@@ -31,7 +31,7 @@ const HeroSection = () => {
     ))
 
     return (
-        <section className="py-5" style={{ backgroundImage: `${bgImage}`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', zIndex: "1" }}>
+        <section className="py-5">
             <div className="container-fluid">
                 <div className="row ps-3">
                     <div className="large bg-info bg-opacity-10 block-1 col-12 col-lg-7 rounded-4 my-2">
@@ -84,12 +84,6 @@ const HeroSection = () => {
                                 <input type="emai" className="form-control form-control-lg" id="email" placeholder="Your Email" />
                             </div>
                             <div className="mb-3">
-                                <label for="checkbox" className="form-label">
-                                    <input type="checkbox" className="form-check-input p-2" id="checkbox" />
-                                    Subscribe to our newsletter
-                                </label>
-                            </div>
-                            <div className="mb-3">
                                 <button type="submit" className="btn btn-dark btn-lg w-100">Submit</button>
                             </div>
                         </form>
@@ -139,10 +133,10 @@ const HeroSection = () => {
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-4">
-                                    <img src={phoneImg} alt="phoneImg" className="img-fluid" style={{ marginTop: "-140px", marginBottom: "-140px"}} />
+                                    <img src={phoneImg} alt="phoneImg" className="img-fluid" style={{ marginTop: "-100px", marginBottom: "-100px"}} />
                                 </div>
-                                <div className="col-md-8 text-center mt-5 pt-5">
-                                    <h2 className="fs-2 fw-bold text-dark my-5">Shop Faster With Our FoodBazaar Mobile App</h2>
+                                <div className="col-md-8 text-center pt-5">
+                                    <h2 className="fs-2 fw-bold text-dark pt-5 mt-4">Shop Faster With Our FoodBazaar Mobile App</h2>
                                     <p className="fs-6 my-5">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
                                     <div className="d-flex flex-wrap gap-4 justify-content-center align-items-center my-5">
                                         <img src={storeImg} alt="storeImg" className="img-fluid" />
