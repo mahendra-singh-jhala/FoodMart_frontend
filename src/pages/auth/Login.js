@@ -1,5 +1,6 @@
 import React from 'react'
 import loginImg from '../../asset/banner-image-2.jpg'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
     return (
@@ -19,7 +20,7 @@ const Login = () => {
                             <label for="password" className="form-label fw-semibold">Password</label>
                             <input type="password" className="form-control form-control-lg" id="password" placeholder="Password" />
                         </div>
-                        <a className="text-primary link-underline link-underline-opacity-0 link-underline-opacity-75-hover">don't have an account?</a>
+                        <Link to="/register" className="text-primary link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Don't have an account?</Link>
                         <div className="mb-3 mt-1">
                             <button type="submit" className="btn btn-dark btn-lg w-100">Login</button>
                         </div>
