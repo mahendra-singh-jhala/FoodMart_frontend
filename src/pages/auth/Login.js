@@ -14,11 +14,11 @@ const Login = () => {
                     <form action="" className="p-4">
                         <div className="mb-3">
                             <label for="email" className="form-label fw-semibold">Email</label>
-                            <input type="emai" className="form-control form-control-lg" id="email" placeholder="Your Email" />
+                            <input type="emai" className="form-control form-control-lg fs-6" id="email" placeholder="Your Email" />
                         </div>
                         <div className="mb-3">
                             <label for="password" className="form-label fw-semibold">Password</label>
-                            <input type="password" className="form-control form-control-lg" id="password" placeholder="Password" />
+                            <input type="password" className="form-control form-control-lg fs-6" id="password" placeholder="Password" />
                         </div>
                         <Link to="/register" className="text-primary link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Don't have an account?</Link>
                         <div className="mb-3 mt-1">

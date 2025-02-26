@@ -9,6 +9,7 @@ import XIcon from '@mui/icons-material/X';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -70,29 +71,29 @@ const Footer = () => {
                         <div className="col-lg-3 col-md-6 col-sm-6">
                             <img src={logo} alt="logo" />
                             <div className="my-5">
-                                <a href="" className="btn btn-outline-warning text-dark me-1"><XIcon className="fs-5" /></a>
-                                <a href="" className="btn btn-outline-warning text-dark me-1"><FacebookIcon className="fs-5" /></a>
-                                <a href="" className="btn btn-outline-warning text-dark me-1"><InstagramIcon className="fs-5" /></a>
-                                <a href="" className="btn btn-outline-warning text-dark me-1"><YouTubeIcon className="fs-5" /></a>
+                                <Link className="btn btn-outline-warning text-dark me-1"><XIcon className="fs-5" /></Link>
+                                <Link className="btn btn-outline-warning text-dark me-1"><FacebookIcon className="fs-5" /></Link>
+                                <Link className="btn btn-outline-warning text-dark me-1"><InstagramIcon className="fs-5" /></Link>
+                                <Link className="btn btn-outline-warning text-dark me-1"><YouTubeIcon className="fs-5" /></Link>
                             </div>
                         </div>
                         <div className="col-md-2 col-sm-6 d-flex flex-column">
                             <h3 className="fw-bold">Our Menus</h3>
-                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Chicken</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Pizza</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Fresh Vegetables</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Cold Drinks</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Biryani</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Burger</a>
+                            <Link className="text-decoration-none fs-6 text-muted fw-semibold">Chicken</Link>
+                            <Link className="text-decoration-none fs-6 text-muted fw-semibold">Pizza</Link>
+                            <Link className="text-decoration-none fs-6 text-muted fw-semibold">Fresh Vegetables</Link>
+                            <Link className="text-decoration-none fs-6 text-muted fw-semibold">Cold Drinks</Link>
+                            <Link className="text-decoration-none fs-6 text-muted fw-semibold">Biryani</Link>
+                            <Link className="text-decoration-none fs-6 text-muted fw-semibold">Burger</Link>
                         </div>
                         <div className="col-md-3 col-sm-6 d-flex flex-column">
-                            <h3 className="fw-bold">Useful Links</h3>
-                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">About Us</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Restaurant</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Our Chefs</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Blog</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">FAQ</a>
-                            <a href="" className="text-decoration-none fs-6 text-muted fw-semibold">Privacy policy</a>
+                            <h3 className="fw-bold">Links</h3>
+                            <Link className="text-decoration-none fs-6 text-muted fw-semibold">About Us</Link>
+                            <Link className="text-decoration-none fs-6 text-muted fw-semibold">Restaurant</Link>
+                            <Link className="text-decoration-none fs-6 text-muted fw-semibold">Our Chefs</Link>
+                            <Link className="text-decoration-none fs-6 text-muted fw-semibold">Blog</Link>
+                            <Link className="text-decoration-none fs-6 text-muted fw-semibold">FAQ</Link>
+                            <Link className="text-decoration-none fs-6 text-muted fw-semibold">Privacy policy</Link>
                         </div>
                         <div className="col-lg-4 col-md-6 col-sm-6">
                             <h3 className="fw-bold mb-4">Subscribe Us</h3>
@@ -114,7 +115,7 @@ const Footer = () => {
                             <p>&copy; 2023-2024 FoodBazaar. All rights reserved</p>
                         </div>
                         <div className="col-md-6 mb-1 fw-semibold">
-                            <p className="text-lg-end">Designed & Developed by<a href="" className="text-decoration-none text-capitalize"> Mahendra Singh Jhala</a></p>
+                            <p className="text-lg-end">Designed & Developed by<Link className="text-decoration-none text-capitalize"> Mahendra Singh Jhala</Link></p>
                         </div>
                     </div>
                 </div>

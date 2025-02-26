@@ -14,25 +14,25 @@ const Register = () => {
                     <form action="" className="p-4">
                         <div className="mb-3">
                             <label for="text" className="form-label fw-semibold">Username</label>
-                            <input type="text" className="form-control form-control-lg" id="text" placeholder="Username" />
+                            <input type="text" className="form-control form-control-lg fs-6" id="text" placeholder="Username" />
                         </div>
                         <div className="row mb-3">
                             <div className="col-6">
                                 <label for="firstname" className="form-label fw-semibold">First Name</label>
-                                <input type="text" className="form-control form-control-lg" id="firstname" placeholder="first name" />
+                                <input type="text" className="form-control form-control-lg fs-6" id="firstname" placeholder="first name" />
                             </div>
                             <div className="col-6">
                                 <label for="last name" className="form-label fw-semibold">Last Name</label>
-                                <input type="text" className="form-control form-control-lg" id="last name" placeholder="last name" />
+                                <input type="text" className="form-control form-control-lg fs-6" id="last name" placeholder="last name" />
                             </div>
                         </div>
                         <div className="mb-3">
                             <label for="email" className="form-label fw-semibold">Email</label>
-                            <input type="emai" className="form-control form-control-lg" id="email" placeholder="Your Email" />
+                            <input type="emai" className="form-control form-control-lg fs-6" id="email" placeholder="Your Email" />
                         </div>
                         <div className="mb-3">
                             <label for="password" className="form-label fw-semibold">Password</label>
-                            <input type="password" className="form-control form-control-lg" id="password" placeholder="Password" />
+                            <input type="password" className="form-control form-control-lg fs-6" id="password" placeholder="Password" />
                         </div>
                         <Link to="/login" className="text-primary link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Already have an account?</Link>
                         <div className="mb-3 mt-1">

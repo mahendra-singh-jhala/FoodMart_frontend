@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import DensitySmallIcon from '@mui/icons-material/DensitySmall';
 import GiftImg from '../../../asset/gift.svg'
 import CloseIcon from '@mui/icons-material/Close';
@@ -23,28 +24,31 @@ const Header = () => {
                                 </button>
                             </div>
                             <div className="offcanvas-body">
-                                <ul class="navbar-nav list-inline list-unstyled d-flex gap-md-3 mb-0 ms-3">
-                                    <li class="list-inline-item active">
-                                        <a class="nav-link active text-muted fs-6 fw-bold" href="#">Grocery</a>
+                                <ul className="navbar-nav list-inline list-unstyled d-flex gap-md-3 mb-0 ms-3">
+                                    <li className="list-inline-item active">
+                                        <Link to="/home" className="nav-link active text-muted fs-6 fw-bold">Home</Link>
                                     </li>
-                                    <li class="list-inline-item">
-                                        <a class="nav-link text-muted fs-6 fw-bold" href="#">Drink</a>
+                                    <li className="list-inline-item active">
+                                        <Link to="/home/grocery" className="nav-link active text-muted fs-6 fw-bold">Grocery</Link>
                                     </li>
-                                    <li class="list-inline-item">
-                                        <a class="nav-link text-muted fs-6 fw-bold" href="#">Bakery</a>
+                                    <li className="list-inline-item">
+                                        <Link to="/home/drink" className="nav-link text-muted fs-6 fw-bold">Drink</Link>
                                     </li>
-                                    <li class="list-inline-item">
-                                        <a class="nav-link text-muted fs-6 fw-bold" href="#">Chefs</a>
+                                    <li className="list-inline-item">
+                                        <Link to="/home/bakery" className="nav-link text-muted fs-6 fw-bold">Bakery</Link>
+                                    </li>
+                                    <li className="list-inline-item">
+                                        <Link to="/home/chef" className="nav-link text-muted fs-6 fw-bold">Chefs</Link>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </nav>
-                <div class="d-none d-lg-block">
+                <div className="d-none d-lg-block">
                     <a className="nav-link">
                         <img src={GiftImg} alt="giftImg" />
-                        <strong class="ms-2 text-dark text-uppercase">get free gift</strong>
+                        <strong className="ms-2 text-dark text-uppercase">get free gift</strong>
                     </a>
                 </div>
             </div>
