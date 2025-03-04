@@ -5,11 +5,13 @@ import { Button } from '@mui/material'
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Category from './Category';
+import NewArrived from './NewArrived';
 
 const Grocery = () => {
     return (
         <section className="py-5">
             <Category />
+            <NewArrived />
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-12">
