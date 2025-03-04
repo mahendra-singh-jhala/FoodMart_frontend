@@ -4,10 +4,12 @@ import img1 from '../../../asset/thumb-orange-juice.png'
 import { Button } from '@mui/material'
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import Category from './Category';
 
 const Grocery = () => {
     return (
         <section className="py-5">
+            <Category />
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-12">
