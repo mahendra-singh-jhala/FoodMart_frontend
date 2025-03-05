@@ -1,8 +1,8 @@
 import React from 'react'
-import img from "../../../asset/icon-soft-drinks-bottle.png"
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import { Link } from 'react-router-dom';
+import CategoryCard from './CategoryCard';
 
 const Category = () => {
     return (
@@ -20,18 +20,7 @@ const Category = () => {
                         </div>
                     </div>
                     <div className="col-md-12">
-                        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-                            {[1, 2, 3, 4, 5].map(() => (
-                                <div className="col">
-                                    <div className="text-center my-2 border p-4 rounded shadow my-4">
-                                        <Link className="nav-link categorie-item">
-                                            <img src={img} alt="img1" className="img-fluid" />
-                                            <h3 className="categories-title fs-5 text-capitalize fw-bold my-2">soft & enrgy drinks</h3>
-                                        </Link>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                        <CategoryCard />
                     </div>
                 </div>
             </div>
