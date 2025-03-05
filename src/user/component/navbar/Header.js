@@ -26,19 +26,16 @@ const Header = () => {
                             <div className="offcanvas-body">
                                 <ul className="navbar-nav list-inline list-unstyled d-flex gap-md-3 mb-0 ms-3">
                                     <li className="list-inline-item active">
-                                        <Link to="/home" className="nav-link active text-muted fs-6 fw-bold">Home</Link>
+                                        <Link to="/" className="nav-link active text-muted fs-6 fw-bold">Home</Link>
                                     </li>
                                     <li className="list-inline-item active">
-                                        <Link to="/home/grocery" className="nav-link active text-muted fs-6 fw-bold">Grocery</Link>
+                                        <Link to="/grocery" className="nav-link active text-muted fs-6 fw-bold">Grocery</Link>
                                     </li>
                                     <li className="list-inline-item">
-                                        <Link to="/home/drink" className="nav-link text-muted fs-6 fw-bold">Drink</Link>
+                                        <Link to="/bakery" className="nav-link text-muted fs-6 fw-bold">Bakery</Link>
                                     </li>
                                     <li className="list-inline-item">
-                                        <Link to="/home/bakery" className="nav-link text-muted fs-6 fw-bold">Bakery</Link>
-                                    </li>
-                                    <li className="list-inline-item">
-                                        <Link to="/home/chef" className="nav-link text-muted fs-6 fw-bold">Chefs</Link>
+                                        <Link to="/chef" className="nav-link text-muted fs-6 fw-bold">Chefs</Link>
                                     </li>
                                 </ul>
                             </div>

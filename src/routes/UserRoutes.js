@@ -13,7 +13,7 @@ const UserRoutes = () => {
             <Navbar />
             <HeroCarousel />
             <Routes>
-                <Route path="/home/*" element={<Home />} />
+                <Route path="/*" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
             </Routes>
