@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import AliceCarousel from 'react-alice-carousel';
-import NewChefs from './NewChefs';
 
-const Chef = () => {
+const NewChefs = () => {
     const [activeIndex, setActiveIndex] = useState(0)
     const responsive = {
         0: { items: 1 },
@@ -27,7 +26,7 @@ const Chef = () => {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="d-flex flex-wrap justify-content-lg-between px-4 border-bottom py-1">
-                            <h3 className="fs-2 fw-bold ms-4">Trending Chefs</h3>
+                            <h3 className="fs-2 fw-bold ms-4">New Chefs</h3>
                             <div className="me-5">
                                 <Link className="btn-link text-decoration-none text-muted fw-bold fs-5 me-3"> View All Categorie </Link>
                                 {activeIndex !== items.length - 5 && items.length > 0 && (
@@ -51,12 +50,9 @@ const Chef = () => {
                         />
                     </div>
                 </div>
-                <div className="my-5">
-                    <NewChefs />
-                </div>
             </div>
         </section>
     )
 }
 
-export default Chef
+export default NewChefs
