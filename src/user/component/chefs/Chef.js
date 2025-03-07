@@ -22,7 +22,7 @@ const Chef = () => {
     const items = [1, 2, 3, 4, 5, 6].map(() => <ChefCard />)
 
     return (
-        <section>
+        <section className="mt-5">
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-12">

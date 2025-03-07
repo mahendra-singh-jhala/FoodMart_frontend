@@ -26,7 +26,7 @@ const HeroCarousel = () => {
     ))
 
     return (
-        <section className="py-5">
+        <section className="py-3">
             <div className="container-fluid">
                 <div className="row ps-3">
                     <div className="large bg-info bg-opacity-10 block-1 col-12 col-lg-7 rounded-4 my-2">
