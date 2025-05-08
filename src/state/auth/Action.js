@@ -1,7 +1,7 @@
 import { api } from "../../config/API"
-import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, REGISTER_FAILURE, REGISTER_REQUEST, REGISTER_SUCCESS } from "./ActionType"
+import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT, REGISTER_FAILURE, REGISTER_REQUEST, REGISTER_SUCCESS } from "./ActionType"
 
-
+// handle user registration
 export const register = (userData) => async (dispatch) => {
     dispatch({ type: REGISTER_REQUEST })
     try {
@@ -13,6 +13,7 @@ export const register = (userData) => async (dispatch) => {
     }
 }
 
+// handle user login
 export const login = (useData) => async (dispatch) => {
     dispatch({ type: LOGIN_REQUEST })
     try {
@@ -25,4 +26,10 @@ export const login = (useData) => async (dispatch) => {
     } catch (error) {
         dispatch({ type: LOGIN_FAILURE, payload: error })
     }
+}
+
+// handle for use logout
+export const logout = () => async (dispatch) => {
+    dispatch({ type: LOGOUT, payload: null })
+    localStorage.clear()
 }
