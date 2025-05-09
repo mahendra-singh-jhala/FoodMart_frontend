@@ -1,5 +1,5 @@
 import { api } from "../../config/API"
-import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT, REGISTER_FAILURE, REGISTER_REQUEST, REGISTER_SUCCESS } from "./ActionType"
+import { GET_USER_FAILURE, GET_USER_REQUEST, GET_USER_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT, REGISTER_FAILURE, REGISTER_REQUEST, REGISTER_SUCCESS } from "./ActionType"
 
 // handle user registration
 export const register = (userData) => async (dispatch) => {
@@ -25,6 +25,23 @@ export const login = (useData) => async (dispatch) => {
         dispatch({ type: LOGIN_SUCCESS, payload: user })
     } catch (error) {
         dispatch({ type: LOGIN_FAILURE, payload: error })
+    }
+}
+
+// handle get user 
+export const user = () => async (dispatch) => {
+    const token = JSON.parse(localStorage.getItem("token").token)
+    dispatch({ type: GET_USER_REQUEST })
+    try {
+        const res = await api.get("/api/auth/user", {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        const data = res.data
+        dispatch({ type: GET_USER_SUCCESS, payload: data})
+    } catch (error) {
+        dispatch({ type: GET_USER_FAILURE, payload: error})
     }
 }
 
