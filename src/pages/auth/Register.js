@@ -1,6 +1,6 @@
 import React from 'react'
 import loginImg from '../../asset/banner-image-2.jpg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from "redux"
 import { register } from '../../state/auth/Action'
 
