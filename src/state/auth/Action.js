@@ -14,10 +14,10 @@ export const register = (userData) => async (dispatch) => {
 }
 
 // handle user login
-export const login = (useData) => async (dispatch) => {
+export const login = (userData) => async (dispatch) => {
     dispatch({ type: LOGIN_REQUEST })
     try {
-        const res = await api.post("/api/auth/login", useData)
+        const res = await api.post("/api/auth/login", userData)
         const user = res.data
         if(user) {
             localStorage.setItem("token", JSON.stringify(user))
