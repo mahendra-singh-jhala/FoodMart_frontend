@@ -1,6 +1,6 @@
-import { useDispatch } from 'redux'
 import loginImg from '../../asset/banner-image-2.jpg'
 import { Link } from 'react-router-dom'
+import { useDispatch } from "react-redux"
 import { login } from '../../state/auth/Action'
 
 const Login = () => {
