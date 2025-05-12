@@ -1,10 +1,11 @@
 import loginImg from '../../asset/banner-image-2.jpg'
 import { Link } from 'react-router-dom'
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { login } from '../../state/auth/Action'
 
 const Login = () => {
     const dispatch = useDispatch()
+    const { isLoading } = useSelector(state => state.auth)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -27,9 +28,9 @@ const Login = () => {
                     <form onSubmit={handleSubmit} className="p-4">
                         <div className="mb-3">
                             <label for="email" className="form-label fw-semibold">Email</label>
-                            <input 
-                                type="emai" 
-                                id="email" 
+                            <input
+                                type="emai"
+                                id="email"
                                 name='email'
                                 placeholder="Your Email"
                                 className="form-control form-control-lg fs-6"
@@ -38,9 +39,9 @@ const Login = () => {
                         </div>
                         <div className="mb-3">
                             <label for="password" className="form-label fw-semibold">Password</label>
-                            <input 
+                            <input
                                 type="password"
-                                id="password" 
+                                id="password"
                                 name='password'
                                 placeholder="Password"
                                 className="form-control form-control-lg fs-6"
@@ -49,7 +50,13 @@ const Login = () => {
                         </div>
                         <Link to="/register" className="text-primary link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Don't have an account?</Link>
                         <div className="mb-3 mt-1">
-                            <button type="submit" className="btn btn-dark btn-lg w-100">Login</button>
+                            <button type="submit" className="btn btn-dark btn-lg w-100">
+                                {isLoading ? (
+                                    <span>Loading...</span>
+                                ) : (
+                                    "Login"
+                                )}
+                            </button>
                         </div>
                     </form>
                 </div>

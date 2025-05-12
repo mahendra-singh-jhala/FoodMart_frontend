@@ -6,7 +6,7 @@ import { register } from '../../state/auth/Action'
 const Register = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
-    const { success, isLoading } = useSelector((state) => state.auth)
+    const { success, isLoading } = useSelector(state => state.auth)
 
     // Handle form submission
     const handleSubmit = (e) => {
