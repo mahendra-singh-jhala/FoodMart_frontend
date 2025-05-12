@@ -11,7 +11,7 @@ const initialState = {
 }
 
 export const authReducer = (state = initialState, action) => {
-    switch(action) {
+    switch(action.type) {
         case REGISTER_REQUEST:
         case LOGIN_REQUEST:
         case GET_USER_REQUEST:
@@ -19,7 +19,7 @@ export const authReducer = (state = initialState, action) => {
 
         case REGISTER_SUCCESS:
         case LOGIN_SUCCESS:
-            return {...state, isLoading: false, user: action.payload.user, token: action.payload.token, error: null}
+            return {...state, success: true, isLoading: false, user: action.payload.user, token: action.payload.token, error: null}
 
         case GET_USER_SUCCESS:
             return {...state, isLoading: false, user: action.payload.user, error: null }
