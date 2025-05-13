@@ -1,11 +1,12 @@
 import loginImg from '../../asset/banner-image-2.jpg'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
-import { login } from '../../state/auth/Action'
+import { login, user } from '../../state/auth/Action'
+import { useEffect } from 'react'
 
 const Login = () => {
     const dispatch = useDispatch()
-    const { isLoading } = useSelector(state => state.auth)
+    const { isLoading, token } = useSelector(state => state.auth)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -16,6 +17,15 @@ const Login = () => {
         }
         dispatch(login(userData))
     }
+
+    // useEffect hook to get the user data if a token is present
+    useEffect(() => {
+        if(token) {
+            dispatch(user())
+        }
+    }, [dispatch, token])
+
+
 
     return (
         <div className="bg-warning bg-gradient min-vh-100 d-flex justify-content-center align-items-center">

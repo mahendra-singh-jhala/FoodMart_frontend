@@ -38,8 +38,9 @@ export const user = () => async (dispatch) => {
                 Authorization: `Bearer ${token}`
             }
         })
-        const data = res.data
-        dispatch({ type: GET_USER_SUCCESS, payload: data})
+        const user = res.data
+        console.log(user)
+        dispatch({ type: GET_USER_SUCCESS, payload: user})
     } catch (error) {
         dispatch({ type: GET_USER_FAILURE, payload: error})
     }
