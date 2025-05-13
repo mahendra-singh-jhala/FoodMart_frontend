@@ -30,16 +30,15 @@ export const login = (userData) => async (dispatch) => {
 
 // handle get user 
 export const user = () => async (dispatch) => {
-    const token = JSON.parse(localStorage.getItem("token").token)
+    const token = JSON.parse(localStorage.getItem("token")).token
     dispatch({ type: GET_USER_REQUEST })
     try {
-        const res = await api.get("/api/auth/user", {
+        const res = await api.get("/api/users/user", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         })
         const user = res.data
-        console.log(user)
         dispatch({ type: GET_USER_SUCCESS, payload: user})
     } catch (error) {
         dispatch({ type: GET_USER_FAILURE, payload: error})
