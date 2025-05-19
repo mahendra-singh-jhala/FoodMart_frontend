@@ -1,10 +1,9 @@
 import React from 'react'
-import bgImage from '../../asset/ad-bg-pattern.png'
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { heroCarouselData } from '../../data/HeroCarousel/HeroCarousel'
-import ads1 from '../../asset/ad-image-1.png'
-import ads2 from '../../asset/ad-image-2.png'
+import ads1 from '../../../asset/ad-image-1.png'
+import ads2 from '../../../asset/ad-image-2.png'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 const HeroCarousel = () => {

@@ -4,7 +4,7 @@ import ShieldIcon from '@mui/icons-material/Shield';
 import DiamondIcon from '@mui/icons-material/Diamond';
 import SavingsIcon from '@mui/icons-material/Savings';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
-import logo from '../../asset/logo.png'
+import logo from '../../../asset/logo.png'
 import XIcon from '@mui/icons-material/X';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';

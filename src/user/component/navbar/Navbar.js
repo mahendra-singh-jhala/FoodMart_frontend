@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="container-fluid">
             <div className="row py-3 border-bottom">
                 <div className="col-lg-8 col-sm-4 text-center text-sm-start">
-                    <Link>
+                    <Link to="/">
                         <img src={logo} alt='logo' />
                     </Link>
                 </div>

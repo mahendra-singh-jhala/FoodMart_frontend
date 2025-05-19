@@ -2,8 +2,8 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Navbar from '../user/component/navbar/Navbar'
 import Home from '../pages/home/Home'
-import Login from '../pages/auth/Login'
-import Register from '../pages/auth/Register'
+import Login from '../user/pages/auth/Login'
+import Register from '../user/pages/auth/Register'
 
 const UserRoutes = () => {
     return (

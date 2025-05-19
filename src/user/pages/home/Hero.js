@@ -1,9 +1,9 @@
 import React from 'react'
-import storeImg from '../../asset/app-store.jpg'
-import googleImg from '../../asset/google-play.jpg'
-import phoneImg from '../../asset/phone.png'
-import ads3 from '../../asset/ad-image-3.png'
-import ads4 from '../../asset/ad-image-4.png'
+import storeImg from '../../../asset/app-store.jpg'
+import googleImg from '../../../asset/google-play.jpg'
+import phoneImg from '../../../asset/phone.png'
+import ads3 from '../../../asset/ad-image-3.png'
+import ads4 from '../../../asset/ad-image-4.png'
 
 const Hero = () => {
     return (
