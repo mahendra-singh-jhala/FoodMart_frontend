@@ -1,7 +1,7 @@
-import loginImg from '../../asset/banner-image-2.jpg'
+import loginImg from '../../../asset/banner-image-2.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
-import { register } from '../../state/auth/Action'
+import { register } from '../../../state/auth/Action'
 
 const Register = () => {
     const navigate = useNavigate()

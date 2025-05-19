@@ -1,7 +1,7 @@
-import loginImg from '../../asset/banner-image-2.jpg'
+import loginImg from '../../../asset/banner-image-2.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
-import { login, user } from '../../state/auth/Action'
+import { login, user } from '../../../state/auth/Action'
 import { useEffect } from 'react'
 
 const Login = () => {

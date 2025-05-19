@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import UserRoutes from "./routes/UserRoutes";
-import PageNotFound from "./pages/notpagefound/PageNotFound";
+import PageNotFound from "./user/pages/notpagefound/PageNotFound";
 
 function App() {
     return (

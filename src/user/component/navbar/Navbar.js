@@ -4,9 +4,12 @@ import PersonIcon from '@mui/icons-material/Person'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import Header from './Header'
 import { Link } from 'react-router-dom'
+import { useSelector  } from 'react-redux'
 
 const Navbar = () => {
-    const [auth, setAuth] = useState(false)
+    const auth = useSelector(state => state.auth)
+
+
     return (
         <div className="container-fluid">
             <div className="row py-3 border-bottom">
@@ -15,7 +18,7 @@ const Navbar = () => {
                         <img src={logo} alt='logo' />
                     </Link>
                 </div>
-                {auth ? (
+                {auth?.user ? (
                     <div className="col-lg-4 col-sm-8 d-flex align-items-center justify-content-center justify-content-lg-around mt-4 mt-md-0">
                         <div className="text-end d-none d-xl-block">
                             <span className="fs-6 text-muted fw-medium">For Support</span>
