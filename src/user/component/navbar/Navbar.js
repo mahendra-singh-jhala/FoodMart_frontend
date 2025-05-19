@@ -4,11 +4,15 @@ import PersonIcon from '@mui/icons-material/Person'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import Header from './Header'
 import { Link } from 'react-router-dom'
-import { useSelector  } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
     const auth = useSelector(state => state.auth)
+    const [isOpen, setIsOpen] = useState(false)
 
+    const handleOpen = () => {
+        setIsOpen(!isOpen)
+    }
 
     return (
         <div className="container-fluid">
@@ -24,11 +28,21 @@ const Navbar = () => {
                             <span className="fs-6 text-muted fw-medium">For Support</span>
                             <h5 className="">+91 90807060</h5>
                         </div>
-                        <ul className="d-flex justify-content-end m-0 list-unstyled">
-                            <li>
-                                <Link className="rounded-circle bg-light p-2 mx-1">
+                        <ul className="d-flex align-items-center justify-content-end m-0 list-unstyled">
+                            <li className="nav-item dropdown">
+                                <Link className="rounded-circle bg-light p-2 mx-1" onClick={handleOpen}>
                                     <PersonIcon className="text-muted" />
                                 </Link>
+                                {isOpen && (
+                                    <div className="dropdown-menu show position-absolute" style={{ right: 0 }}>
+                                        <Link className="dropdown-item" to="/profile">
+                                            Profile
+                                        </Link>
+                                        <Link className="dropdown-item" to="/logout">
+                                            Logout
+                                        </Link>
+                                    </div>
+                                )}
                             </li>
                             <li>
                                 <Link className="rounded-circle bg-light p-2 mx-1">
@@ -49,7 +63,7 @@ const Navbar = () => {
                     </div>
                 )}
             </div>
-            <Header auth={auth} />
+            <Header auth={auth?.user} />
         </div>
     )
 }

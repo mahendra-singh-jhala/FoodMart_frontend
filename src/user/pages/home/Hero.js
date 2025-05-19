@@ -4,33 +4,38 @@ import googleImg from '../../../asset/google-play.jpg'
 import phoneImg from '../../../asset/phone.png'
 import ads3 from '../../../asset/ad-image-3.png'
 import ads4 from '../../../asset/ad-image-4.png'
+import { useSelector } from 'react-redux'
 
 const Hero = () => {
+    const auth = useSelector(state => state.auth)
+
     return (
         <section>
-            <div className="container-fluid">
-                <div className="row bg-success bg-opacity-10 rounded-4 py-5 my-5">
-                    <div className="col-md-6">
-                        <h2 className="display-4 fw-semibold ms-5 mt-5">Get <span className="text-warning">25% Discount</span> on your first purchase</h2>
-                        <p className="ms-5 fs-6 text-muted">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                    </div>
-                    <div className="col-md-6 p-5">
-                        <form action="" className="">
-                            <div className="mb-3">
-                                <label for="name" className="form-label fw-semibold">Name</label>
-                                <input type="text" className="form-control form-control-lg" id="name" placeholder="Your Name" />
-                            </div>
-                            <div className="mb-3">
-                                <label for="email" className="form-label fw-semibold">Email</label>
-                                <input type="emai" className="form-control form-control-lg" id="email" placeholder="Your Email" />
-                            </div>
-                            <div className="mb-3">
-                                <button type="submit" className="btn btn-dark btn-lg w-100">Submit</button>
-                            </div>
-                        </form>
+            {!auth?.user && (
+                <div className="container-fluid">
+                    <div className="row bg-success bg-opacity-10 rounded-4 py-5 my-5">
+                        <div className="col-md-6">
+                            <h2 className="display-4 fw-semibold ms-5 mt-5">Get <span className="text-warning">25% Discount</span> on your first purchase</h2>
+                            <p className="ms-5 fs-6 text-muted">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        </div>
+                        <div className="col-md-6 p-5">
+                            <form action="" className="">
+                                <div className="mb-3">
+                                    <label for="name" className="form-label fw-semibold">Name</label>
+                                    <input type="text" className="form-control form-control-lg" id="name" placeholder="Your Name" />
+                                </div>
+                                <div className="mb-3">
+                                    <label for="email" className="form-label fw-semibold">Email</label>
+                                    <input type="emai" className="form-control form-control-lg" id="email" placeholder="Your Email" />
+                                </div>
+                                <div className="mb-3">
+                                    <button type="submit" className="btn btn-dark btn-lg w-100">Submit</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
             <div className="container-fluid py-4">
                 <div className="row g-2">
                     <div className="col-md-6">
