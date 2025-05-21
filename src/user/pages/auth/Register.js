@@ -37,7 +37,7 @@ const Register = () => {
                     <h1 className="text-center"> Sign Up </h1>
                     <form className="p-4">
                         <div className="mb-3">
-                            <label for="username" className="form-label fw-semibold">Username</label>
+                            <label className="form-label fw-semibold">Username</label>
                             <input
                                 type="text"
                                 id="username"
@@ -49,7 +49,7 @@ const Register = () => {
                         </div>
                         <div className="row mb-3">
                             <div className="col-6">
-                                <label for="firstname" className="form-label fw-semibold">First Name</label>
+                                <label className="form-label fw-semibold">First Name</label>
                                 <input
                                     type="text"
                                     id="firstname"
@@ -60,7 +60,7 @@ const Register = () => {
                                 />
                             </div>
                             <div className="col-6">
-                                <label for="last name" className="form-label fw-semibold">Last Name</label>
+                                <label className="form-label fw-semibold">Last Name</label>
                                 <input
                                     type="text"
                                     id="lastname"
@@ -72,7 +72,7 @@ const Register = () => {
                             </div>
                         </div>
                         <div className="mb-3">
-                            <label for="email" className="form-label fw-semibold">Email</label>
+                            <label className="form-label fw-semibold">Email</label>
                             <input
                                 type="emai"
                                 id="email"
@@ -83,7 +83,7 @@ const Register = () => {
                             />
                         </div>
                         <div className="mb-3">
-                            <label for="password" className="form-label fw-semibold">Password</label>
+                            <label className="form-label fw-semibold">Password</label>
                             <input
                                 type="password"
                                 id="password"

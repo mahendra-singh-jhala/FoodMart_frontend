@@ -21,11 +21,11 @@ const Hero = () => {
                         <div className="col-md-6 p-5">
                             <form action="" className="">
                                 <div className="mb-3">
-                                    <label for="name" className="form-label fw-semibold">Name</label>
+                                    <label className="form-label fw-semibold">Name</label>
                                     <input type="text" className="form-control form-control-lg" id="name" placeholder="Your Name" />
                                 </div>
                                 <div className="mb-3">
-                                    <label for="email" className="form-label fw-semibold">Email</label>
+                                    <label className="form-label fw-semibold">Email</label>
                                     <input type="emai" className="form-control form-control-lg" id="email" placeholder="Your Email" />
                                 </div>
                                 <div className="mb-3">

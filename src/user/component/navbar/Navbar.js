@@ -1,17 +1,35 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../../../asset/logo.png'
 import PersonIcon from '@mui/icons-material/Person'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import Header from './Header'
-import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { logout, user } from '../../../state/auth/Action'
 
 const Navbar = () => {
     const auth = useSelector(state => state.auth)
     const [isOpen, setIsOpen] = useState(false)
+    const dispatch = useDispatch()
+    const tokenData = localStorage.getItem("token");
+    const token = tokenData ? JSON.parse(tokenData).token : null;
+    const navigate = useNavigate()
 
     const handleOpen = () => {
         setIsOpen(!isOpen)
+    }
+
+    // useEffect hook to get the user data if a token is present
+    useEffect(() => {
+        if(token) {
+            dispatch(user())
+        }
+    }, [dispatch, token])
+
+    // Function to handle user logout
+    const handleLogout = () => {
+        dispatch(logout())
+        navigate("/")
     }
 
     return (
@@ -38,7 +56,7 @@ const Navbar = () => {
                                         <Link className="dropdown-item" to="/profile">
                                             Profile
                                         </Link>
-                                        <Link className="dropdown-item" to="/logout">
+                                        <Link className="dropdown-item" onClick={handleLogout} >
                                             Logout
                                         </Link>
                                     </div>
