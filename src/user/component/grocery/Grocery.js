@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Category from './Category';
 import NewArrived from './NewArrived';
 import GroceryCard from './GroceryCard';
+import { useDispatch, useSelector } from "react-redux"
+import { findFoodProduct } from '../../../state/product/Action';
 
 const Grocery = () => {
+    const dispatch = useDispatch()
+    const { foodProducts } = useSelector(state => state.foodProducts)
+
+    useEffect(() => {
+        dispatch(findFoodProduct())
+    }, [dispatch])
+
     return (
         <section className="py-5">
             <Category />
@@ -25,7 +34,7 @@ const Grocery = () => {
                             </div>
                         </div>
                         <div className="my-3">
-                            <GroceryCard />
+                            <GroceryCard foodProducts={foodProducts?.foodProduct} />
                         </div>
                     </div>
                 </div>
