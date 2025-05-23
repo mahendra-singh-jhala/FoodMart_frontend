@@ -13,7 +13,10 @@ export const getCart = () => async (dispatch) => {
         })
 
         const data = res.data
-        dispatch({ type: GET_CART_SUCCESS, payload: data })
+         dispatch({ type: FIND_PRODUCTS_SUCCESS, payload: {
+            cartItem: data.cart.cartItem,
+            cart: data.cart
+        }})
     } catch (error) {
         dispatch({ type: GET_CART_FAILURE, payload: error.message })
     }
