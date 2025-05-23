@@ -9,7 +9,7 @@ const GroceryCard = ({ foodProducts }) => {
     return (
         <div className="fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab">
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-                {foodProducts.map((food) => (
+                {foodProducts?.map((food) => (
                     <div className="col">
                         <div className="position-relative p-2 bg-white mb-4 shadow border border-1 rounded-2 text-center">
                             <div className="bg-body-secondary rounded-3">
