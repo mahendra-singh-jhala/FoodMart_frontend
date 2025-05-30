@@ -17,7 +17,8 @@ const Register = () => {
             firstname: data.get("firstname"),
             lastname: data.get("lastname"),
             email: data.get("email"),
-            password: data.get("password")
+            password: data.get("password"),
+            role: data.get("role")
         }
         dispatch(register(userData))
     }
@@ -36,6 +37,20 @@ const Register = () => {
                 <div className="rounded-3 w-100 p-4" onSubmit={handleSubmit}>
                     <h1 className="text-center"> Sign Up </h1>
                     <form className="p-4">
+                        <div className="mb-3">
+                            <select
+                                aria-label="Select role"
+                                id="role"
+                                name="role"
+                                className="form-control form-control-lg fs-6"
+                                required
+                            >
+                                <option value="">-- Select Role --</option>
+                                <option value="user">User</option>
+                                <option value="chef">Chef</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
                         <div className="mb-3">
                             <label className="form-label fw-semibold">Username</label>
                             <input
