@@ -20,4 +20,3 @@ export const bakeryReducer = (state = initialState, action) => {
 }
 
 
-
