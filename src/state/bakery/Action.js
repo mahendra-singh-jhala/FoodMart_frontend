@@ -1,10 +1,10 @@
 import { CREATE_BAKERY_FAILURE, CREATE_BAKERY_REQUEST, CREATE_BAKERY_SUCCESS, GET_BAKERY_FAILURE, GET_BAKERY_REQUEST, GET_BAKERY_SUCCESS } from "./ActionType"
 
-export const createBakery = () => async (dispatch) => {
+export const createBakery = (bakeryData) => async (dispatch) => {
     const token = JSON.parse(localStorage.getItem("token")).token
     dispatch({ type: CREATE_BAKERY_REQUEST })
     try {
-        const res = await api.post("/api/bakery", {
+        const res = await api.post("/api/bakery", { bakeryData }, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -26,7 +26,7 @@ export const getBakery = () => async (dispatch) => {
                 Authorization: `Bearer ${token}`
             }
         })
-
+        
         const bakery = res.data
         dispatch({ type: GET_BAKERY_SUCCESS, payload: bakery })
     } catch (error) {
