@@ -19,6 +19,7 @@ const Login = () => {
         dispatch(login(userData))
     }
 
+    console.log(token)
     // useEffect hook to get the user data if a token is present
     useEffect(() => {
         if(token) {

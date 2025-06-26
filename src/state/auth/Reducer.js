@@ -1,13 +1,15 @@
 import { GET_USER_FAILURE, GET_USER_REQUEST, GET_USER_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT, REGISTER_FAILURE, REGISTER_REQUEST, REGISTER_SUCCESS } from "./ActionType"
 
+const storedAuth = JSON.parse(localStorage.getItem("auth"));
 
 const initialState = {
-    user: null,
+    user: storedAuth?.user || null,
     isLoading: false,
     success: false,
     error: null,
-    token: null
-}
+    token: storedAuth?.token || null
+};
+
 
 export const authReducer = (state = initialState, action) => {
     switch(action.type) {

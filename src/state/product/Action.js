@@ -1,5 +1,5 @@
 import { CREATE_PRODUCT_FAILURE, CREATE_PRODUCT_REQUEST, CREATE_PRODUCT_SUCCESS, FIND_PRODUCT_BY_ID_FAILURE, FIND_PRODUCT_BY_ID_REQUEST, FIND_PRODUCT_BY_ID_SUCCESS, FIND_PRODUCTS_FAILURE, FIND_PRODUCTS_REQUEST, FIND_PRODUCTS_SUCCESS } from "./ActionType"
-import { api } from '../../config/API'
+import api  from '../../config/API'
 
 // create product
 export const createFoodProduct = (FoodData) => async (dispatch) => {
@@ -18,7 +18,6 @@ export const createFoodProduct = (FoodData) => async (dispatch) => {
         dispatch({ type: CREATE_PRODUCT_FAILURE, payload: error.message })
     }
 }
-
 
 // find all products
 export const findFoodProduct = () => async (dispatch) => {
