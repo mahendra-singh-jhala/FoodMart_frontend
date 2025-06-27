@@ -3,14 +3,9 @@ import { CREATE_ORDER_FAILURE, CREATE_ORDER_REQUEST, CREATE_ORDER_SUCCESS, GET_O
 
 // create an order
 export const createOrder = (reqData) => async (dispatch) => {
-    const token = JSON.parse(localStorage.getItem("token")).token
     dispatch({ type: CREATE_ORDER_REQUEST })
     try {
-        const res = await api.post('/api/order', { address: reqData.address }, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
+        const res = await api.post('/api/order', { address: reqData.address })
         const data = res.data
         dispatch({ type: CREATE_ORDER_SUCCESS, payload: data })
     } catch (error) {
@@ -20,14 +15,9 @@ export const createOrder = (reqData) => async (dispatch) => {
 
 // fetch a specific order by ID
 export const getOrderById = (orderId) => async (dispatch) => {
-    const token = JSON.parse(localStorage.getItem("token")).token
     dispatch({ type: GET_ORDER_BY_ID_REQUEST })
     try {
-        const res = await api.post(`/api/order/${orderId}`, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
+        const res = await api.post(`/api/order/${orderId}`)
         const data = res.data
         dispatch({ type: GET_ORDER_BY_ID_SUCCESS, payload: data })
     } catch (error) {
@@ -37,14 +27,9 @@ export const getOrderById = (orderId) => async (dispatch) => {
 
 // fetch a all order
 export const getOrders = () => async (dispatch) => {
-    const token = JSON.parse(localStorage.getItem("token")).token
     dispatch({ type: GET_ORDER_USER_REQUEST })
     try {
-        const res = await api.post(`/api/order`, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
+        const res = await api.post(`/api/order`)
         const data = res.data
         dispatch({ type: GET_ORDER_USER_SUCCESS, payload: data })
     } catch (error) {

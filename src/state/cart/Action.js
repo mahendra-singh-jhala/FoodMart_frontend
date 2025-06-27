@@ -3,15 +3,9 @@ import { ADD_ITEM_TO_CART_FAILURE, ADD_ITEM_TO_CART_REQUEST, ADD_ITEM_TO_CART_SU
 
 // fetch the user cart
 export const getCart = () => async (dispatch) => {
-    const token = JSON.parse(localStorage.getItem("token")).token
     dispatch({ type: GET_CART_REQUEST })
     try {
-        const res = await api.get("/api/cart", {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
-
+        const res = await api.get("/api/cart")
         const data = res.data
          dispatch({ type: FIND_PRODUCTS_SUCCESS, payload: {
             cartItem: data.cart.cartItem,
@@ -24,15 +18,9 @@ export const getCart = () => async (dispatch) => {
 
 // add item to the cart
 export const addItemToCart = () => async (dispatch) => {
-    const token = JSON.parse(localStorage.getItem("token")).token
     dispatch({ type: ADD_ITEM_TO_CART_REQUEST })
     try {
-        const res = await api.get("/api/cart/add", {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
-
+        const res = await api.get("/api/cart/add")
         const data = res.data
         dispatch({ type: ADD_ITEM_TO_CART_SUCCESS, payload: data })
     } catch (error) {
@@ -42,13 +30,9 @@ export const addItemToCart = () => async (dispatch) => {
 
 // update the quantity of item in the cart
 export const updateCartItem = (cartItemId, quantity) => async (dispatch) => {
-    const token = JSON.parse(localStorage.getItem("token")).token
     dispatch({ type: UPDATE_CART_ITEM_REQUEST })
     try {
-        const res = await api.put(`/api/cart/${cartItemId}`, { quantity }, {
-            Authorization: `Bearer ${token}`
-        })
-
+        const res = await api.put(`/api/cart/${cartItemId}`, { quantity })
         const data = res.data
         dispatch({ type: UPDATE_CART_ITEM_SUCCESS, payload: data })
     } catch (error) {
@@ -58,13 +42,9 @@ export const updateCartItem = (cartItemId, quantity) => async (dispatch) => {
 
 // delete item from the cart
 export const deleteCartItem = (cartItemId) => async (dispatch) => {
-    const token = JSON.parse(localStorage.getItem("token")).token
     dispatch({ type: DELETE_CART_ITEM_REQUEST })
     try {
-        const res = await api.delete(`/api/cart/${cartItemId}`, {
-            Authorization: `Bearer ${token}`
-        })
-
+        const res = await api.delete(`/api/cart/${cartItemId}`)
         const data = res.data
         dispatch({ type: DELETE_CART_ITEM_SUCCESS, payload: data })
     } catch (error) {
