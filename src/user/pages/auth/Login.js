@@ -1,12 +1,12 @@
 import loginImg from '../../../asset/banner-image-2.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
-import { login, user } from '../../../state/auth/Action'
+import { login, getUser } from '../../../state/auth/Action'
 import { useEffect } from 'react'
 
 const Login = () => {
     const dispatch = useDispatch()
-    const { isLoading, token } = useSelector(state => state.auth)
+    const { isLoading, token, user } = useSelector(state => state.auth)
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
@@ -19,18 +19,23 @@ const Login = () => {
         dispatch(login(userData))
     }
 
-    console.log(token)
     // useEffect hook to get the user data if a token is present
     useEffect(() => {
         if(token) {
-            dispatch(user())
+            dispatch(getUser())
         }
     }, [dispatch, token])
 
-    // useEffect hook to handle redirect on role based (admin or user)
+    // useEffect hook to handle redirect on role based
     useEffect(() => {
         if(token) {
-            navigate("/")
+            if(user?.role === "user") {
+                navigate("/")
+            } else if (user?.role === "chef") {
+                navigate("/chefProfile")
+            } else if (user?.role === "bakery") {
+                navigate("/bakery")
+            }
         }
     }, [token, navigate])
 

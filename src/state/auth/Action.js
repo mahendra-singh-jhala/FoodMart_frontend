@@ -29,7 +29,7 @@ export const login = (userData) => async (dispatch) => {
 }
 
 // handle get user 
-export const user = () => async (dispatch) => {
+export const getUser = () => async (dispatch) => {
     dispatch({ type: GET_USER_REQUEST })
     try {
         const res = await api.get("/api/users/user")

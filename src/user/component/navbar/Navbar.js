@@ -5,7 +5,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import Header from './Header'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { logout, user } from '../../../state/auth/Action'
+import { logout, getUser } from '../../../state/auth/Action'
 
 const Navbar = () => {
     const auth = useSelector(state => state.auth)
@@ -22,7 +22,7 @@ const Navbar = () => {
     // useEffect hook to get the user data if a token is present
     useEffect(() => {
         if(token) {
-            dispatch(user())
+            dispatch(getUser())
         }
     }, [dispatch, token])
 
