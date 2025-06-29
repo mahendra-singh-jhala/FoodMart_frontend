@@ -21,7 +21,7 @@ const Navbar = () => {
 
     // useEffect hook to get the user data if a token is present
     useEffect(() => {
-        if(token) {
+        if (token) {
             dispatch(getUser())
         }
     }, [dispatch, token])
@@ -68,10 +68,12 @@ const Navbar = () => {
                                 </Link>
                             </li>
                         </ul>
-                        <div className="d-flex flex-column gap-2 lh-1 border-0 bg-transparent">
-                            <span className="fs-6 text-muted">Your Cart</span>
-                            <span className="fs-5 fw-bold">₹ 250</span>
-                        </div>
+                        <Link to="/cart" className="text-decoration-none">
+                            <div className="d-flex flex-column gap-2 lh-1 border-0 bg-transparent text-black">
+                                <span className="fs-6 text-muted fw-bold">Your Cart</span>
+                                <span className="fs-5 fw-bold ">₹ 250</span>
+                            </div>
+                        </Link>
                     </div>
                 ) : (
                     <div className="col-lg-4 col-sm-8 d-flex align-items-center justify-content-center justify-content-lg-around mt-4 mt-md-0">
