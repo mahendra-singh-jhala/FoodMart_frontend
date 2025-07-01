@@ -37,5 +37,7 @@ export const cartReducer = (state = initialState, action) => {
         case DELETE_CART_ITEM_FAILURE:
             return { ...state, isLoading: false, error: action.payload }
 
+        default:
+            return state
     }
 }

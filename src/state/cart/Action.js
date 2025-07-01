@@ -1,4 +1,4 @@
-import { api } from '../../config/API'
+import api from '../../config/API'
 import { ADD_ITEM_TO_CART_FAILURE, ADD_ITEM_TO_CART_REQUEST, ADD_ITEM_TO_CART_SUCCESS, DELETE_CART_ITEM_FAILURE, DELETE_CART_ITEM_REQUEST, DELETE_CART_ITEM_SUCCESS, GET_CART_FAILURE, GET_CART_REQUEST, GET_CART_SUCCESS, UPDATE_CART_ITEM_FAILURE, UPDATE_CART_ITEM_REQUEST, UPDATE_CART_ITEM_SUCCESS } from './ActionType'
 
 // fetch the user cart
@@ -7,10 +7,12 @@ export const getCart = () => async (dispatch) => {
     try {
         const res = await api.get("/api/cart")
         const data = res.data
-         dispatch({ type: FIND_PRODUCTS_SUCCESS, payload: {
-            cartItem: data.cart.cartItem,
-            cart: data.cart
-        }})
+        dispatch({
+            type: GET_CART_SUCCESS, payload: {
+                cartItem: data.cart.cartItem,
+                cart: data.cart
+            }
+        })
     } catch (error) {
         dispatch({ type: GET_CART_FAILURE, payload: error.message })
     }

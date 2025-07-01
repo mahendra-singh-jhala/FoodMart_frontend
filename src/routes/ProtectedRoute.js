@@ -5,7 +5,6 @@ import { Navigate, Outlet } from 'react-router-dom';
 const ProtectedRoute = ({ roles }) => {
     const { isLoading, token, user } = useSelector(state => state.auth)
 
-    console.log(isLoading)
     if (isLoading) return null;
 
     if (!token || !roles.includes(user?.role)) {
