@@ -43,7 +43,7 @@ export const updateCartItem = (cartItemId, quantity) => async (dispatch) => {
 }
 
 // delete item from the cart
-export const deleteCartItem = (cartItemId) => async (dispatch) => {
+export const removeCartItem = (cartItemId) => async (dispatch) => {
     dispatch({ type: DELETE_CART_ITEM_REQUEST })
     try {
         const res = await api.delete(`/api/cart/${cartItemId}`)

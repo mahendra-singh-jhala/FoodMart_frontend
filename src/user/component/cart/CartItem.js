@@ -1,22 +1,30 @@
 import React from 'react'
 import { Button, IconButton } from "@mui/material";
 import { AddCircleOutline, RemoveCircleOutline } from "@mui/icons-material";
+import { useDispatch } from 'react-redux';
+import { removeCartItem } from "../../../state/cart/Action";
 
-const CartItem = () => {
+const CartItem = ({ item }) => {
+    const dispatch = useDispatch()
+
+    const handleRemoveCartItem = () => {
+        dispatch(removeCartItem(item?._id));
+    };
+
     return (
-        <div className="p-5 shadow-lg border rounded-md mb-6">
+        <div className="p-4 shadow-lg border rounded-md mb-6">
             <div className="d-flex align-items-center">
-                <div className="w-25 h-25">
-                    <img className="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D" alt="productImg" />
+                <div className="" style={{ width: "200px", height: "150px", objectFit: "cover"}}>
+                    <img className="w-100 h-100 object-fit-cover" src={item.food?.imageUrl} alt="productImg" />
                 </div>
 
                 <div className="ms-5">
-                    <p className="fw-semibold">title</p>
-                    <p className="opacity-70 fs-6"> name </p>
+                    <p className="fw-semibold">{item.food?.title}</p>
+                    <p className="opacity-70 fs-6"> {item?.food?.food} </p>
                     <div className="d-flex align-items-center text-secondary pt-2">
-                        <p className="font-semibold"> ₹499 </p>
-                        <p className="opacity-50 text-decoration-line-through mx-3"> ₹699 </p>
-                        <p className="text-success fw-semibold"> 10% off </p>
+                        <p className="font-semibold"> ₹{item?.discountedPrice} </p>
+                        <p className="opacity-50 text-decoration-line-through mx-3"> ₹{item?.price} </p>
+                        <p className="text-success fw-semibold"> {item?.product?.discountPersent}% off </p>
                     </div>
                 </div>
             </div>
@@ -34,7 +42,7 @@ const CartItem = () => {
                     </IconButton>
                 </div>
                 <div>
-                    <Button sx={{ bgcolor: "red", color: "white", marginTop: "10px", width: "120px", ":hover": { bgcolor: "#ed0000" } }}>
+                    <Button sx={{ bgcolor: "red", color: "white", marginTop: "10px", width: "120px", ":hover": { bgcolor: "#ed0000" } }} onClick={handleRemoveCartItem}>
                         Remove
                     </Button>
                 </div>
