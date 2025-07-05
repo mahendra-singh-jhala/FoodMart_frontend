@@ -7,7 +7,6 @@ import { getCart } from '../../../state/cart/Action'
 const Cart = () => {
     const dispatch = useDispatch()
     const cart = useSelector(state => state.cart.cart)
-    const cartItems = cart?.cartItem
 
     // useEffect to fetch cart data
     useEffect(() => {
@@ -18,9 +17,7 @@ const Cart = () => {
         <div className="container my-5">
             <div className="row relative">
                 <div className="col-8">
-                    {cartItems?.map((item) => (
-                        <CartItem key={item._id} item={item} />
-                    ))}
+                    <CartItem />
                 </div>
                 <div className="col-4">
                     <div className="border p-5">

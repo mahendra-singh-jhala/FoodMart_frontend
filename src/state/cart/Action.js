@@ -35,8 +35,9 @@ export const updateCartItem = (cartItemId, quantity) => async (dispatch) => {
     dispatch({ type: UPDATE_CART_ITEM_REQUEST })
     try {
         const res = await api.put(`/api/cart/${cartItemId}`, { quantity })
-        const data = res.data
+        const data = res.data.updatedCartItem
         dispatch({ type: UPDATE_CART_ITEM_SUCCESS, payload: data })
+        dispatch(getCart())
     } catch (error) {
         dispatch({ type: UPDATE_CART_ITEM_FAILURE, payload: error.message })
     }

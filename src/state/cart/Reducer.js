@@ -8,11 +8,11 @@ const initialState = {
 }
 
 export const cartReducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case GET_CART_REQUEST:
             return { ...state, isLoading: true, error: null }
         case GET_CART_SUCCESS:
-            return { ...state, isLoading: false, cartItem: action.payload.cartItem, cart: action.payload.cart,  error: null }
+            return { ...state, isLoading: false, cartItem: action.payload.cartItem, cart: action.payload.cart, error: null }
         case GET_CART_FAILURE:
             return { ...state, isLoading: false, error: action.payload }
 
@@ -28,8 +28,8 @@ export const cartReducer = (state = initialState, action) => {
             return { ...state, isLoading: true, error: null }
 
         case UPDATE_CART_ITEM_SUCCESS:
-            return { ...state, isLoading: false, cartItem: action.payload, error: null}
-        
+            return { ...state, isLoading: false, cartItem: action.payload, error: null };
+
         case DELETE_CART_ITEM_SUCCESS:
             return { ...state, isLoading: false, cartItem: action.payload, error: null }
 
