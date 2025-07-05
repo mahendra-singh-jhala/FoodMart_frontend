@@ -50,6 +50,7 @@ export const removeCartItem = (cartItemId) => async (dispatch) => {
         const res = await api.delete(`/api/cart/${cartItemId}`)
         const data = res.data
         dispatch({ type: DELETE_CART_ITEM_SUCCESS, payload: data })
+        dispatch(getCart())
     } catch (error) {
         dispatch({ type: DELETE_CART_ITEM_FAILURE, payload: error.message })
     }

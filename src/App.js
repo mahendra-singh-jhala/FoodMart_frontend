@@ -9,6 +9,7 @@ import Navbar from "./user/component/navbar/Navbar";
 import BakeryRoutes from "./routes/BakeryRoutes";
 import AdminRoutes from "./routes/AdminRoutes";
 import Cart from "./user/component/cart/Cart";
+import UserProfile from "./user/component/user/UserProfile";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                 <Route element={<ProtectedRoute roles={["user"]} />} >
                     <Route path="/*" element={<UserRoutes />} />
                     <Route path="/cart" element={<Cart />} />
+                    <Route path="/profile" element={<UserProfile />} />
                 </Route>
 
                 <Route element={<ProtectedRoute roles={["bakery"]} />} >
